@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="content-message" *ngIf="items.length==0">
+    <p>{{message}}</p>
+  </div>
+  <ion-list *ngIf="items.length > 0">
+      <ion-item *ngFor="let item of items">
+        <ion-thumbnail item-start>
+          <img [src]="item.img">
+        </ion-thumbnail>
+        <h2>{{item.subcategory}}</h2>
+        <p>{{item.description}}</p>
+        <button ion-button clear item-end (click)="selectItem(item)">View</button>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

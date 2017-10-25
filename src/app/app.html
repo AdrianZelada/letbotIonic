@@ -1,0 +1,21 @@
+<ion-content>
+<!-- Real floating action button, fixed. It will not scroll with the content -->
+<ion-fab bottom right>
+        <button ion-fab ion-long-press [interval]="400" (onPressStart)="initPress()" 
+            (onPressing)="listening()" (onPressEnd)="endPress()">
+                <ion-icon name="ios-microphone-outline"></ion-icon>
+        </button>
+</ion-fab>
+
+<!-- Button shaped as a circle that just like a normal button scrolls with the content -->
+<!-- <button ion-fab (click)="listening()">Button</button> -->
+<ion-nav [root]="rootPage"></ion-nav>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-searchbar [(ngModel)]="query" [debounce]="debounce" (ionInput)="getItems($event)" (ionCancel)="cancel($event)"></ion-searchbar>
+        <!-- <ion-title>Footer</ion-title> -->
+    </ion-toolbar>
+</ion-footer>
+
+
